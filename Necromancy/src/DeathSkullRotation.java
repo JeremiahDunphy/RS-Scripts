@@ -17,13 +17,17 @@ public class DeathSkullRotation {
 
         // An Array of delay times to replicate random button spamming.
         // Total delay divided by 4
-        int baseDelay = 1900 / 4;
+        int baseDelay = 1900 / 8;
 
         Integer[] delays = {
-                baseDelay + (int) (Math.random() * 26),  // Part of delay, randomized
-                baseDelay + (int) (Math.random() * 26),
-                baseDelay + (int) (Math.random() * 26),
-                baseDelay + (int) (Math.random() * 26)
+                baseDelay + (int) (Math.random() * 13),  // Part of delay, randomized
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
+                baseDelay + (int) (Math.random() * 13),
         };
 
         keyEvents.add(new SimpleEntry<>(KeyEvent.VK_4, delays));
@@ -52,8 +56,7 @@ public class DeathSkullRotation {
 
         Robot robot = new Robot();
 
-
-        // Loops through the List and presses each key, then waits a random amount of time between 2,000 and 2100 MS.
+// Loops through the List and presses each key with different delays
         while (rotationTimes < 20) {
             for (Map.Entry<Integer, Integer[]> keyEvent : keyEvents) {
                 for (int delay : keyEvent.getValue()) {
@@ -61,8 +64,9 @@ public class DeathSkullRotation {
                     robot.keyRelease(keyEvent.getKey());
                     Thread.sleep(delay);
                 }
-                rotationTimes++;
             }
+            rotationTimes++;
         }
+
     }
 }
