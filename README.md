@@ -48,9 +48,18 @@ This project contains a Java script for the DeathSkullRotation application, whic
    - Ensure your code is well-documented and includes comments where necessary.
 
 ## Changelog
+### Version 0.1
+**Release Date: 1/27/2024
+#### Changes:
+-
 
 ### Version 0.02
 **Release Date: 1/27/2024
+
+- Added "jnativehook" Library: Introduced the "jnativehook" library to enable global key listeners. This enhancement allows the script to listen for key press events globally, even when the application is not in focus.
+ Start and Stop Automation: Implemented a dynamic start and stop functionality based on specific key press events. When the designated key (e.g., F2) is pressed, the automation can be toggled on or off. This feature provides greater control  over when the script executes its actions.
+
+- How it Works: When the script is running, it continuously monitors for the designated key (e.g., F2) press event. Upon pressing this key, the script either starts or stops the automation based on its current state. This enables users to     easily initiate or halt the automated actions while using the application.
 
 #### Changes:
 - Adjusted the delay calculation logic in the DeathSkullRotation script.
